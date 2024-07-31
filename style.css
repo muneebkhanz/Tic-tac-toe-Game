@@ -1,0 +1,162 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #9d4edd, #6c0ea3);
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.t-head {
+    color: white;
+    margin: 4% 0 0 0;
+    font-size: 3rem;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    animation: slideInDown 1s ease-in-out;
+}
+
+.container {
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2vmin;
+}
+
+.game {
+    height: 60vmin;
+    width: 60vmin;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5vmin;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.box {
+    width: 18vmin;
+    height: 18vmin;
+    border-radius: 1rem;
+    border: none;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
+    font-size: 8vmin;
+    color: #d80032;
+    background-color: white;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+    animation: bounceIn 0.5s ease-in-out;
+}
+
+.box:hover {
+    transform: scale(1.05);
+    background-color: #f0e6ff;
+}
+
+#rest-btn, #new-btn {
+    padding: 1rem;
+    font-size: 1.25rem;
+    background-color: #3a0ca3;
+    color: white;
+    border: none;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    animation: slideInUp 1s ease-in-out;
+}
+
+#rest-btn:hover, #new-btn:hover {
+    background-color: #5c31c3;
+}
+
+#msg {
+    color: white;
+    font-size: 5vmin;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 1s ease-in-out;
+}
+
+.msg-container {
+    height: 100vmin;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 5rem;
+}
+
+.hide {
+    display: none;
+}
+
+/* Responsive Design */
+/* @media (max-width: 768px) {
+    .box {
+        width: 24vmin;
+        height: 24vmin;
+        font-size: 10vmin;
+    }
+} */
+
+@media (max-width: 480px) {
+    .box {
+        width: 30vmin;
+        height: 30vmin;
+        font-size: 12vmin;
+    }
+    #msg {
+        font-size: 7vmin;
+    }
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInDown {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+    70% {
+        transform: scale(0.9);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
